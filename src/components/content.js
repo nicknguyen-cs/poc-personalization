@@ -4,11 +4,11 @@ import feature from "../images/feature.png"
 import SectionHeader from "./section-header"
 import { COLORS } from "../styles/constants"
 
-const Content = () => (
+const Content = (data) => (
   <div style={{ padding: "4rem 1rem", textAlign: "center" }}>
     <SectionHeader
-      title="Minimal Features"
-      description="Don't spend time ripping out unneeded plugins and bloat."
+      title= {data.contentstackData.footer_description}
+      description={data.contentstackData.footer_header}
     />
     <content
       style={{
@@ -19,10 +19,9 @@ const Content = () => (
       }}
     >
       <div>
-        <h3>What you need to Start</h3>
+        <h3>{data.contentstackData.features_header}</h3>
         <p style={{ color: COLORS.gray }}>
-          Includes plugins for analytics, building sitemaps, and optimizing
-          images
+          {data.contentstackData.features_description}
         </p>
       </div>
       <div>

@@ -23,5 +23,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-contentstack`,
+      options: {
+        api_key: 'blt4bc040d0d95765c8',
+        delivery_token: 'csc33b1d9f859d2038e13bc1df',
+        environment: 'production',
+      },
+    },
+
   ],
 }

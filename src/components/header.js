@@ -1,36 +1,49 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { COLORS } from "../styles/constants"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  }
+
+  render() {
+    return (
+      <div
+        style={{
+          display: "grid",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 240px))",
+          padding: "1rem 2rem",
+          fontSize: ".85rem",
+        }}
+      >
+        <div style={{ fontWeight: 700 }}>
+          <button
+            style={{ textDecoration: "none" }}
+            onClick={() => this.props.changeToDeveloper('english')}
+          >Developer</button>
+          <button
+            style={{ textDecoration: "none" }}
+            onClick={() => this.props.changeToMarketer('english')}
+          >Marketer</button>
+        </div>
+        <div style={{ fontWeight: 700 }}>
+          <button
+            style={{ textDecoration: "none" }}
+            onClick={() => this.props.changeToDeveloper('spanish')}
+          >Developer (es)</button>
+          <button
+            style={{ textDecoration: "none" }}
+            onClick={() => this.props.changeToMarketer('spanish')}
+          >Marketer (es)</button>
+        </div>
+      </div>
+    )
+  }
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
+

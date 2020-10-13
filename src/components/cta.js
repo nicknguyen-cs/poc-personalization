@@ -3,13 +3,13 @@ import React from "react"
 import Button from "../components/button"
 import SectionHeader from "./section-header"
 
-const CallToAction = () => (
+const CallToAction = (data) => (
   <div style={{ padding: "4rem 1rem", textAlign: "center" }}>
     <SectionHeader
-      title="Stay Updated"
-      description="Give a final call to action because that's what the cool kids are doing."
+      title={data.contentstackData.features_header}
+      description={data.contentstackData.features_description}
     />
-    <Button>Get Early Access</Button>
+    <Button>{data.contentstackData.footer_cta.title}</Button>
   </div>
 )
 
